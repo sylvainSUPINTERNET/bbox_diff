@@ -9,7 +9,7 @@ def mul_by_2(
 ):
     i = wp.tid()  # Indice du thread : 0, 1, 2 ou 3
     output[i] = input[i] * 2.0
-
+    wp.printf("Thread %d : valeur = %f\n", i, input[i])
 
 # Création des tableaux dans la mémoire du GPU
 input = wp.array([1.0, 2.0, 3.0, 4.0], dtype=float, device="cuda:0")
